@@ -1,0 +1,47 @@
+package com.company.service;
+
+import java.sql.Date;
+import java.sql.Time;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.company.dao.CompanyDAO;
+import com.company.dao.IPODAO;
+import com.company.dto.NewIPORequest;
+import com.company.entity.Company;
+
+public class IPOServiceImpl implements IPOService{
+	
+	@Autowired
+	IPODAO ipoDao;
+	
+	@Autowired
+	CompanyDAO companyDao;
+	
+	
+	
+	@Transactional
+	public NewIPORequest newIPO(NewIPORequest newIpo) {
+		Company company = companyDao.findByName(newIpo.getCompany());
+		if(company!=null)
+			IPO ipo = new IPO(newIpo.getPricePerShare(), ntotalShares, Date openDate, Time openTime, String remark)
+		return null;
+	}
+
+	@Override
+	public NewIPORequest updateIPO(NewIPORequest mewIpoRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteIpo(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+
+}

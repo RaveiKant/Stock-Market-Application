@@ -1,0 +1,22 @@
+package com.stock.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.stock.service.StockService;
+
+@RestController
+@RequestMapping("/api/stock")
+public class StockController {
+	
+	@Autowired
+	StockService stockService;
+
+	@PostMapping("/upload")
+	public ResponseEntity<List<String>> uploadData(@RequestParam("file") MultipartFile file )throws Exception
+	{
+		return new ResponseEntity<List<String>>(stockService.uploadStockData(file),HttpStatus.ACCEPTED);
+	}
+	
+}

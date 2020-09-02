@@ -1,0 +1,19 @@
+package com.company.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ipo")
+public class IPO {
+	
+	private int id;
+	
+	@ManyToOne
+	private Company company; 
+	
+	private float pricePerShare;
+	private Long totalShares;
+
+}

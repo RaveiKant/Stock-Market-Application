@@ -1,0 +1,27 @@
+package com.company.dto;
+
+import java.sql.Date;
+import java.sql.Time;
+
+
+import com.company.entity.Company;
+
+
+public class NewIPORequest {
+	
+	private int id;
+	
+	private String company; 
+	
+	private float pricePerShare;
+	
+	private Long totalShares;
+	
+	private Date openDate;
+	
+	private Time openTime;
+
+	private String remark;
+
+
+}

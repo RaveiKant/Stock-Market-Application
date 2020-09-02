@@ -1,0 +1,42 @@
+package com.company.dto;
+
+import java.sql.Date;
+import java.sql.Time;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.company.entity.Company;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+public class NewIPORequest {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name="company_id")
+	private Company company; 
+	
+	@Column(name="price_per_share")
+	
+	private float pricePerShare;
+	@Column(name="total_shares")
+	
+	private Long totalShares;
+	
+	@Column(name="open_date")
+	private Date openDate;
+	
+	@Column(name="open_time")
+	private Time openTime;
+
+	private String remark;
+
+
+}

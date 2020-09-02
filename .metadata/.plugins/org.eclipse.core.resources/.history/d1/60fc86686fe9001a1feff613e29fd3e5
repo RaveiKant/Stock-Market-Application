@@ -1,0 +1,7 @@
+package com.company.dao;
+
+import com.company.entity.StockPrice;
+
+public interface StockPriceDAO extends JpaRepostory<StockPrice,Integer>{
+
+}

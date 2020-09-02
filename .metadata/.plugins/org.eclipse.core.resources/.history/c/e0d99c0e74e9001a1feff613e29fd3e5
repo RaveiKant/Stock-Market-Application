@@ -1,0 +1,17 @@
+package com.company.dto;
+
+import javax.persistence.Column;
+
+public class NewCompanyRequest {
+	
+	private String company_id;
+	private String name;
+	private float turnover;
+	private String ceo;
+	private String directors;
+	
+	@Column(name = "brief", nullable = false)
+	private String brief;
+	
+
+}

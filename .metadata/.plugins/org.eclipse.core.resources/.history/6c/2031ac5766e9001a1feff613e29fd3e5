@@ -1,0 +1,18 @@
+package com.company.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToOne;
+
+@Entity
+public class CompanyCode {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private Long value;
+	
+	private String exchangeName;
+	@OneToOne
+	private Company company;
+	
+}

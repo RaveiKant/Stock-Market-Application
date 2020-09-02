@@ -1,0 +1,13 @@
+package com.stock.dto;
+
+public class NewStock {
+	
+	String companyCode;
+	String stockExchange;
+	String currentPrice;
+	String date;
+	String time;
+	
+
+
+}

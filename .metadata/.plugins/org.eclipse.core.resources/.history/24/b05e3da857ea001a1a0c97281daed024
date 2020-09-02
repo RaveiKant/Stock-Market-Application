@@ -1,0 +1,105 @@
+package com.company.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import javax.transaction.Transactional;
+
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.company.dao.CompanyDAO;
+import com.company.dao.ExchangeDAO;
+import com.company.dao.SectorDAO;
+import com.company.dto.CompanyCodeDTO;
+import com.company.dto.NewCompanyRequest;
+import com.company.entity.Company;
+import com.company.entity.CompanyCode;
+import com.company.entity.Exchange;
+import com.company.entity.Sector;
+
+@Service
+public class CompanyServiceImpl implements CompanyService{
+
+	@Autowired
+	private CompanyDAO companyDao;
+	@Autowired
+	private ExchangeDAO exchangeDao;
+	@Autowired
+	private SectorDAO sectorDao;
+	
+	@Transactional
+	public Company addNewCompany(NewCompanyRequest newC) {
+		Company company = new Company(UUID.randomUUID().toString(),
+				newC.getName(),
+				newC.getTurnover(),
+				newC.getCeo(),
+				newC.getDirectors(), 
+				newC.getBrief()); 
+				Sector sector = sectorDao.findByName(newC.getSector());
+				if(sector!=null)
+				{
+				company.setSector(sector);
+				List<CompanyCode> codeUp = new ArrayList<CompanyCode>();
+				List<Exchange> exchanges = new ArrayList<Exchange>();
+				for(CompanyCodeDTO i:newC.getCompanyCodeDto())
+				{
+					CompanyCode companyCode = 
+							new CompanyCode(i.getValue(),
+							exchangeDao.getExchangeName(),company);
+					
+				}
+//				sector.getCompanies().add(company);
+				return companyDao.save(company);
+				}
+				
+//				company.setSector(newC.getSector());
+//			
+////				Sector sector=sectorDao.findByName(newC.getSector());
+////				if(sector!=null)
+////				{
+////					List<CompanyCodeDTO> code = newC.getCompanyCodeDto();
+///
+////					List<Exchange> exchanges = new ArrayList<Exchange>();
+////					for(CompanyCodeDTO i : code)
+////					{
+////						CompanyCode newCode = new CompanyCode();
+////						newCode.setValue(i.getValue());
+////						Exchange exchange = exchangeDao.findByName(i.getExchangeName());
+////						if(exchange!=null)
+////							{
+////							exchange.getCompanies().add(company);
+////							exchanges.add(exchangeDao.findByName(i.getExchangeName()));
+////							newCode.setExchangeName(i.getExchangeName());
+////							codeUp.add(newCode);
+////							}
+////						else
+////							return null;
+////					}	
+////					company.setCompanyCode(codeUp);
+////					company.setExchanges(exchanges);
+////					Company newCompany = companyDao.save(company);
+////					sector.getCompanies().add(company);
+////					ModelMapper mapper = new ModelMapper();
+////					mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+////					return newC;
+////				}
+//				else
+//					return null;
+	}
+
+	@Override
+	public List<Company> listAll() {
+		return companyDao.findAll();
+	}
+
+	@Override
+	public String deleteCompany(NewCompanyRequest newCompanyRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

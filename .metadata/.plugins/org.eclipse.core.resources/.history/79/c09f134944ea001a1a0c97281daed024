@@ -1,0 +1,27 @@
+package com.company.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.company.dto.NewCompanyRequest;
+import com.company.service.CompanyService;
+
+
+@RestController
+@RequestMapping("/api")
+public class CompanyController {
+	
+	@Autowired
+	private CompanyService companyService;
+	
+	@PostMapping("/add")
+	public ResponeEntity<NewCompanyRequest>  addCompany(NewCompanyRequest newCompanyRequest)
+	{
+		return newCompanyRequest;
+		
+	}
+	
+	
+}

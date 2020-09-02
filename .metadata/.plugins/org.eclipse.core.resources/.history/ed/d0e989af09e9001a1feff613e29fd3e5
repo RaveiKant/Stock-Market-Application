@@ -1,0 +1,6 @@
+INSERT INTO sector (brief,name) VALUES ("Finance is a term for matters regarding the management, creation, and study of money and investments. Specifically, it deals with the questions of how and why an individual, company or government acquires the money needed.","Finance");
+INSERT INTO sector (brief,name) VALUES ("Health care, health-care, or healthcare is the maintenance or improvement of health via the prevention, diagnosis, treatment, recovery, or cure of disease, illness, injury, and other physical and mental impairments in people. Health care is delivered by health professionals in allied health fields.","Healthcare Services");
+INSERT INTO sector (brief,name) VALUES ("The pharmaceutical industry discovers, develops, produces, and markets drugs or pharmaceutical drugs for use as medications to be administered to patients, with the aim to cure them, vaccinate them, or alleviate the symptoms.","Pharmaceuticals");
+INSERT INTO sector (brief,name) VALUES ("You're sensible when it comes to business, you're not expecting to get rich quickly, ... Many of their hotels are company owned and operated.","Hotels");
+INSERT INTO sector (brief,name) VALUES ("","Pharmaceuticals);
+INSERT INTO sector (brief,name) VALUES ("","Pharmaceuticals);

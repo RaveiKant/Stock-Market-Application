@@ -1,0 +1,10 @@
+package com.stock.dao;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+@Repository
+public interfaceCompanyCodeDAO extends JpaRepository<Company,Integer> {
+
+}
+

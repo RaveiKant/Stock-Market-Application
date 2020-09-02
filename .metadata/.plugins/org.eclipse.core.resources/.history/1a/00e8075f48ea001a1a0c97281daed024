@@ -1,0 +1,7 @@
+package com.company.dto;
+
+public class CompanyCodeDTO {
+	private Long value;
+	private String exchangeName;
+
+}

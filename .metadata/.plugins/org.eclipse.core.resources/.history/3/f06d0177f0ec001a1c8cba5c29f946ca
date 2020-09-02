@@ -1,0 +1,7 @@
+package com.stock.dao;
+
+
+@Repository
+public interface CompanyDAO extends JpaRepository<Company,Integer>{
+
+}

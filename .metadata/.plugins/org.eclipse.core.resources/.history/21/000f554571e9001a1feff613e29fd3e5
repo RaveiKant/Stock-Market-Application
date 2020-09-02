@@ -1,0 +1,60 @@
+package com.company.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Table(name="company_code")
+@Entity
+public class CompanyCode {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private Long value;
+	@Column(name="exchange_name")
+	private String exchangeName;
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Company company;
+	
+	public CompanyCode() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public CompanyCode(Long value, String exchangeName, Company company) {
+		super();
+		this.value = value;
+		this.exchangeName = exchangeName;
+		this.company = company;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Long getValue() {
+		return value;
+	}
+	public void setValue(Long value) {
+		this.value = value;
+	}
+	public String getExchangeName() {
+		return exchangeName;
+	}
+	public void setExchangeName(String exchangeName) {
+		this.exchangeName = exchangeName;
+	}
+	public Company getCompany() {
+		return company;
+	}
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+	
+}

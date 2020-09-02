@@ -1,0 +1,11 @@
+package com.company.service;
+
+import com.company.dto.NewIPORequest;
+
+public interface IPOService {
+	public NewIPORequest newIPO(NewIPORequest newIpoRequest);
+	public NewIPORequest updateIPO(NewIPORequest mewIpoRequest);
+	public String deleteIpo(String name);
+	public List<IPO> listAll(String companyName);
+
+}

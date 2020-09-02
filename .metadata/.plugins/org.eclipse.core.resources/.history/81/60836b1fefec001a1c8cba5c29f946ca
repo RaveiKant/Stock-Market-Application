@@ -1,0 +1,29 @@
+package com.stock.dto;
+
+public class NewStock {
+	
+	String companyCode;
+	String stockExchange;
+	String currentPrice;
+	String date;
+	String time;
+	
+
+	public void setCompanyCode(String stringCellValue) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void setStockExchange(String stringCellValue) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void setCurrentPrice(double numericCellValue) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

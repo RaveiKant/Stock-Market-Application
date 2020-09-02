@@ -1,0 +1,72 @@
+package com.company.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@Entity
+@Table(name= "company")
+public class Company {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name ="id")
+	private int id;
+	
+	@Column(name = "company_id")
+	private String company_id;
+	
+	@Column(name = "name", nullable = false)
+	private String name;
+	
+	@Column(name = "turnover", nullable = false)
+	private float turnover;
+	
+	@Column(name = "ceo", nullable  = false)
+	private String ceo;
+	
+	@Column(name = "directors", nullable  = false)
+	private String directors;
+	
+	@Column(name = "brief", nullable = false)
+	private String brief;
+	
+	@OneToOne(mappedBy="company",fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@JoinColumn(name="code_id")
+	private CompanyCode companyCode;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "company_exchange", joinColumns = {@JoinColumn(name = "company_id") },
+	inverseJoinColumns = {@JoinColumn(name = "exchange_id") })
+	private List<Exchange> exchanges = new ArrayList<Exchange>();
+	
+	@ManyToOne
+	@JoinColumn(name="secto_id")
+	private Sector sector;
+	
+	
+	@OneToMany(mappedBy="company",cascade = CascadeType.ALL )
+	private List<IPO> ipo;
+	
+	@OneToMany(mappedBy ="company",fetch= FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<StockPrice> stockPrice;
+	
+	
+}

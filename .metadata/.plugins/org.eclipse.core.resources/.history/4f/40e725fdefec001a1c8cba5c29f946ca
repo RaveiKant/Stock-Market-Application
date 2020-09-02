@@ -1,0 +1,6 @@
+package com.stock.dao;
+
+@Repository
+public class StockPriceDAO extends JpaRepository<StockPrice,Integer>{
+
+}

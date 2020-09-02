@@ -1,0 +1,10 @@
+package com.company.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class CompanyCode {
+	
+
+	private Long value;
+}

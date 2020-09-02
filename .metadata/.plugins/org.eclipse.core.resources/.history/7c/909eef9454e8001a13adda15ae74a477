@@ -1,0 +1,5 @@
+package com.sector.dao;
+
+public interface CompanyDAO {
+
+}
