@@ -1,0 +1,31 @@
+<div class="card w-75 mx-auto m-4 bor"  *ngFor="let company of companies">
+    <div class="card-body">
+        <div class="card-header">
+            <h5 class="card-title">{{company.name}}</h5>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <p class="card-text">CEO : {{company.ceo}}</p>
+              </div>
+              <div class="col-sm">
+                <p class="card-text">Turnover : ₹ {{company.turnover}}</p>
+              </div>
+              <div class="col-sm">
+                <p class="card-text">Directors : {{company.directors}}</p>
+              </div>
+            </div>
+            <div class="row">
+                <p class="card-text">Exchanges : </p>
+                <div class="col col-sm-2" *ngFor="let exchange of company.exchanges">
+                <p class="card-text">{{exchange.name}}</p>
+                </div>
+            </div>
+            <p class="card-text">Brief : {{company.brief}}</p>
+          </div>
+    
+      <div class="text-right">
+        <a href="#" class="btn">Edit Company</a>
+      </div>
+    </div>
+  </div>

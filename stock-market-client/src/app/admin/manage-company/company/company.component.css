@@ -1,0 +1,24 @@
+.card {
+    background-color:white;
+    color:black;
+}
+.card-title{
+    font-size: 2rem;
+}
+.btn{
+    background-color:#F7A200 ;
+    color: whitesmoke;
+}
+.card-text{
+    font-size: 1.5rem;
+}
+/* .bor{
+    border: 1rem groove #784212 ;
+} */
+.card-header{
+    background-color:#86B817 ;
+
+}
+.h5{
+    font-weight: bolder;
+}
