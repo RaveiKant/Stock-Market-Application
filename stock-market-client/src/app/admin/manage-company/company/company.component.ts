@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyComponent implements OnInit {
   companies:any;
+  // exchanges:any;
+  // sector:any;
 
 
   constructor() { }
@@ -18,6 +20,9 @@ export class CompanyComponent implements OnInit {
       ceo:"Good Ceo",
       directors:"Diro_1 , Diro_2",
       brief:"Good company",
+      sector:[{
+        name:"Finance"
+      }],
       exchanges:[{
         name:"BSE"
       },
@@ -31,6 +36,9 @@ export class CompanyComponent implements OnInit {
       ceo:"Good Ceo",
       directors:"Diro1,Diro2",
       brief:"Good company",
+      sector:[{
+        name:"Finance"
+      }],
       exchanges:[{
         name:"BSE"
       },
@@ -38,6 +46,13 @@ export class CompanyComponent implements OnInit {
         name:"BSE"
       }]
     }];
+    // for(var c of this.companies){
+    //   for(var e of c.exchanges){
+    //     console.log(e.name)
+    //     // console.log()
+    //   }
+
+    // }
   }
 
 }

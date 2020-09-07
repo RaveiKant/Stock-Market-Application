@@ -11,6 +11,8 @@ import { UploadComponent } from './admin/upload/upload.component';
 import { ManageCompanyComponent } from './admin/manage-company/manage-company.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CompanyComponent } from './admin/manage-company/company/company.component';
+import { NewCompanyComponent } from './admin/manage-company/new-company/new-company.component';
+import { ErrorComponent } from './common/error/error.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CompanyComponent } from './admin/manage-company/company/company.compone
     AdminComponent,
     UploadComponent,
     ManageCompanyComponent,
-    CompanyComponent
+    CompanyComponent,
+    NewCompanyComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
